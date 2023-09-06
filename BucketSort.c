@@ -52,17 +52,16 @@ void bucketSort(double arr[], int n) {
         }
     }
 }
-
-int main() {
-    double arr[] = {0.42, 0.32, 0.33, 0.52, 0.37, 0.47, 0.51};
-    int n = sizeof(arr) / sizeof(arr[0]);
-    printf("Original array:\n");
-    for (int i = 0; i < n; i++) 
-        printf("%.2f ", arr[i]);
-    bucketSort(arr, n);
-    printf("\nSorted array (ascending order):\n");
-    for (int i = 0; i < n; i++) {
-        printf("%.2f ", arr[i]);
-    }
+int main(){
+    int n;
+    printf("Enter the number of elements: ");
+    scanf("%d",&n);
+    double a[n];
+    printf("Enter the elements of array:\n");
+    for(int i=0;i<n;i++) scanf("%lf",&a[i]);
+    bucketSort(a,n);
+    printf("Sorted array is: ");
+    for(int i=0;i<n;i++) printf("%.2f\t",a[i]);
+    printf("\n");
     return 0;
 }
