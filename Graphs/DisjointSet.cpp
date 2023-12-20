@@ -44,6 +44,7 @@ class DisjointSet{
 
 
 int main(){
+    cout<<"Using Rank method"<<endl;
     DisjointSet ds(7);
     ds.unionBySize(1, 2);
     ds.unionBySize(2, 3);
@@ -55,6 +56,20 @@ int main(){
     cout<<endl;
     ds.unionBySize(3,7);
     if(ds.findParent(3)==ds.findParent(7)) cout<<"Same";
+    else cout<<"NotSame";
+
+    cout<<"\n\nUsing Size method\n";
+    DisjointSet ds1(7);
+    ds1.unionBySize(1, 2);
+    ds1.unionBySize(2, 3);
+    ds1.unionBySize(4, 5);
+    ds1.unionBySize(6, 7);
+    ds1.unionBySize(5, 6);
+    if(ds1.findParent(3)==ds1.findParent(7)) cout<<"Same";
+    else cout<<"NotSame";
+    cout<<endl;
+    ds1.unionBySize(3,7);
+    if(ds1.findParent(3)==ds1.findParent(7)) cout<<"Same";
     else cout<<"NotSame";
     cout<<endl;
 }
