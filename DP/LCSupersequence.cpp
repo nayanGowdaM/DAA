@@ -20,6 +20,25 @@ int main(){
         }
     }
 
+
+    string str="";
+    int i=m,j=n;
+    while(i>0 && j>0){
+        if(s1[i-1]==s2[j-1]){
+            str.push_back(s1[i-1]);
+            i--;
+            j--;
+        }
+        else if(dp[i-1][j]>dp[i][j-1])str.push_back(s1[--i]);
+        else str.push_back(s2[--j]);
+
+    }
+    while(i>0){
+        str.push_back(s1[--i]);
+    }
+    while(j>0) str.push_back(s2[--j]);
+    reverse(str.begin(),str.end());
+    cout<<str<<endl;
     cout<< m+n-dp[m][n]<<endl;
     
     return 0;
